@@ -1,0 +1,29 @@
+
+state={
+	id=1083
+	name="STATE_ASitD2"
+	manpower = 115403
+	
+	state_category = city
+	resources={
+		tungsten=17 # was: 26
+		oil=12 # was: 18
+	}
+
+	history={
+		owner = KUB
+		buildings = {
+			infrastructure = 1 #was: 5
+			industrial_complex = 1
+		}
+		add_core_of = KUB
+		add_claim_by = SOV
+		add_claim_by = GAT
+	}
+
+	provinces={
+		6741 11668 
+	}
+
+	local_supplies=9.0 
+}

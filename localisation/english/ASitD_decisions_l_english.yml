@@ -1,0 +1,21 @@
+﻿l_english:
+ ##################
+ ####CATEGORIES####
+ ##################
+ GAT_cat_destabilization: "Targeted Destabilization"
+
+
+ #################
+ ####DECISIONS####
+ #################
+ GAT_dec_UKR_destabilization_1: "Stoke Mass Protests in Ukraine"
+ GAT_dec_UKR_destabilization_2: "Begin the Inevitable"
+ GAT_dec_UKR_destabilization_3: "Final Support for the Regions"
+ 
+ GAT_dec_KUB_destabilization_1: "Stoke Mass Protests in Kuban"
+ GAT_dec_KUB_destabilization_2: "Begin the Inevitable"
+ GAT_dec_KUB_destabilization_3: "Final Support for the Regions"
+
+
+ GAT_dec_UKR_destabilization_1_remove: "Stoke Mass Protests in §t[FROM.GetName]§!"
+ 

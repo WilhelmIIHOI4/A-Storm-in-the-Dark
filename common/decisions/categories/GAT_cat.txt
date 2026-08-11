@@ -1,0 +1,17 @@
+#GAT_cat_ = {
+#
+#	icon = 
+#	priority = 
+#	allowed = {
+#		original_tag = 
+#	}
+#}
+
+GAT_cat_destabilization = {
+
+	icon = eng_move_to_secure_the_dominions
+	priority = 5
+	allowed = {
+		original_tag = GAT
+	}
+}

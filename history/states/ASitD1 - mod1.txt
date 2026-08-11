@@ -1,0 +1,35 @@
+state = {
+	id = 1082
+	name = "STATE_ASitD1" # Zaporozhe
+	manpower = 341041
+	state_category = town
+
+	history = {
+
+		owner = GAT
+		add_core_of = UKR
+		add_core_of = SOV
+		add_claim_by = GAT
+
+
+		buildings = {
+			infrastructure = 3 #was: 5
+			air_base = 3
+			industrial_complex = 2
+			arms_factory = 1
+		}
+		
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 6
+				arms_factory = 6
+			}
+		}
+	}
+
+	provinces = {
+		588 6596 9729 11700 
+	}
+
+	local_supplies = 0.0 
+}

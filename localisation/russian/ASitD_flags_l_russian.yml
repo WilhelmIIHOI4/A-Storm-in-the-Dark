@@ -1,0 +1,14 @@
+﻿l_russian:
+ GAT_Aryan_Brotherhood_c_flag: "Фокус §YАрийское братство§! Выполнен"
+ GAT_superiority_in_quantity_c_flag: "Фокус §YПревосходство количеством§! Выполнен"
+ GAT1_last_purge_focus_days_tt: "В настоящее время: [?GAT_Aryan_Brotherhood_c_flag:days|Y0]"
+ GAT2_last_purge_focus_days_tt: "В настоящее время: [?GAT_superiority_in_quantity_c_flag:days|Y0]"
+ 
+ 
+ GOTENLAND_UKR_claims_no_greater_than_2_tt: "§YГотенландские претензии§! не больше чем §Y2§!"
+ GOTENLAND_UKR_claims_greater_than_16_tt: "§YГотенландские претензии§! больше чем §Y16§!"
+ GAT_promoting_ukrain_state_flag: "Готенланд уже §Yподнимает массовые протесты в регионе Украины§!"
+ UKR_destabilization_1_remove_flag: "Массовые протесты в регионаха"
+ GAT_idea_UKR_destabilization_3_tt: "Решения на §Rдестабилизацию§! §YУкраины§! снова будут §Gдоступны§!"
+ GAT_idea_KUB_destabilization_3_tt: "Решения на §Rдестабилизацию§! §YКубани§! снова будут §Gдоступны§!"
+ 

@@ -1,0 +1,217 @@
+characters = {
+
+	GAT_Alfred_Eduard_Frauenfeld = {
+		name = GAT_Alfred_Eduard_Frauenfeld
+		portraits = {
+			civilian = {
+				large = GFX_portrait_gat_alfred_eduard_frauenfeld
+			}
+		}
+		country_leader = {
+			ideology = nazism
+			traits = { dictator } #GER_der_fuhrer
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		field_marshal = { 
+			traits = { old_guard thorough_planner organisational_leader }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+			#visible = {
+			#	has_government = neutrality
+			#}
+		}
+	}
+	
+	GAT_Erich_Alfred_Hartmann = {
+		name = GAT_Erich_Alfred_Hartmann
+		portraits = {
+			civilian = {
+				large = GFX_portrait_gat_erich_hartmann
+			}
+		}
+		#country_leader = {
+		#	ideology = nazism
+		#	traits = { dictator } #GER_der_fuhrer
+		#	expire = "1965.1.1.1"
+		#	id = -1
+		#}
+		corps_commander = {
+			traits = {  }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	GAT_Felix_Steiner = {
+		name = GAT_Felix_Steiner
+		portraits = {
+			civilian = {
+				large = GFX_portrait_gat_felix_steiner
+			}
+		}
+		#country_leader = {
+		#	ideology = nazism
+		#	traits = { dictator } #GER_der_fuhrer
+		#	expire = "1965.1.1.1"
+		#	id = -1
+		#}
+		corps_commander = {
+			traits = { old_guard organisational_leader }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	GAT_Paul_Hausser = {
+		name = GAT_Paul_Hausser
+		portraits = {
+			civilian = {
+				large = GFX_portrait_gat_paul_hausser
+			}
+		}
+		#country_leader = {
+		#	ideology = nazism
+		#	traits = { dictator } #GER_der_fuhrer
+		#	expire = "1965.1.1.1"
+		#	id = -1
+		#}
+		field_marshal = { 
+			traits = { old_guard thorough_planner }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	GAT_Wilhelm_Stuckart = {
+		name = GAT_Wilhelm_Stuckart
+		portraits = {
+			civilian = {
+				large = GFX_portrait_gat_wilhelm_stuckart
+			}
+			army = {
+				small = GFX_GAT_Wilhelm_Stuckart_small
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { ww_one_trauma warmonger } #GER_der_fuhrer
+			expire = "1953.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { ww_one_trauma cabinet_crisis } #GER_der_fuhrer
+			expire = "1953.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = gat_wilhelm_stuckart
+			allowed = {
+				original_tag = GAT
+			}
+
+			cost = 100
+
+			traits = {
+				MAN_foreign_minister
+			}
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	GAT_German_Winkler = {
+		name = GAT_German_Winkler
+		portraits = {
+			civilian = {
+				large = GFX_portrait_gat_german_winkler
+			}
+			army = {
+				small = GFX_GAT_German_Winkler_small
+			}
+		}
+		#country_leader = {
+		#	ideology = fascism_ideology
+		#	traits = { ww_one_trauma warmonger } #GER_der_fuhrer
+		#	expire = "1953.1.1.1"
+		#	id = -1
+		#}
+		advisor = {
+			slot = theorist
+			idea_token = gat_German_Winkler
+			allowed = {
+				original_tag = GAT
+			}
+
+			cost = 100
+
+			traits = {
+				mobile_warfare_expert
+			}
+			ai_will_do = {
+				factor = 5
+			}
+		}
+		corps_commander = {
+			traits = { politically_connected career_officer }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	GAT_Curt_von_Gottberg = {
+		name = GAT_Curt_von_Gottberg
+		portraits = {
+			civilian = {
+				large = GFX_portrait_gat_Curt_von_Gottberg
+			}
+			army = {
+				small = GFX_portrait_gat_Curt_von_Gottberg_small
+			}
+		}
+		#country_leader = {
+		#	ideology = fascism_ideology
+		#	traits = { ww_one_trauma warmonger } #GER_der_fuhrer
+		#	expire = "1953.1.1.1"
+		#	id = -1
+		#}
+		advisor = {
+			slot = army_chief
+			idea_token = gat_Curt_von_Gottberg
+			allowed = {
+				original_tag = GAT
+			}
+
+			cost = 100
+
+			traits = {
+				army_chief_organizational_2
+			}
+			ai_will_do = {
+				factor = 5
+			}
+		}
+		corps_commander = {
+			traits = { politically_connected career_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+
+}

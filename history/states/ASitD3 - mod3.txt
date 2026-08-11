@@ -1,0 +1,39 @@
+
+state={
+	id=1084
+	name="STATE_ASitD3"
+	manpower = 1393984
+	
+	state_category = city
+	resources={
+		tungsten=17 # was: 26
+		oil=12 # was: 18
+	}
+
+	history={
+		owner = KUB
+		victory_points = {
+			3720 1 
+		}
+		victory_points = {
+			719 3
+		}
+		buildings = {
+			infrastructure = 3 #was: 5
+			industrial_complex = 1
+			719 = {
+				naval_base = 3
+				coastal_bunker = 1
+			}
+		}
+		add_core_of = KUB
+		add_claim_by = SOV
+		#add_claim_by = GAT
+	}
+
+	provinces={
+		3760 719 9696 717 3720 3717 11681 6738 6736 735 9694 9691 
+	}
+
+	local_supplies=9.0 
+}

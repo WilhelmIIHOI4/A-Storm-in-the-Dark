@@ -1,0 +1,21 @@
+﻿l_russian:
+ ##################
+ ####CATEGORIES####
+ ##################
+ GAT_cat_destabilization: "Точечная дестабилизация"
+ 
+ 
+ #################
+ ####DECISIONS####
+ #################
+ GAT_dec_UKR_destabilization_1: "Поднять массовые протесты в Украине"
+ GAT_dec_UKR_destabilization_2: "Начать неизбежное"
+ GAT_dec_UKR_destabilization_3: "Окончательная поддержка регионов"
+ 
+ GAT_dec_KUB_destabilization_1: "Поднять массовые протесты в Кубани"
+ GAT_dec_KUB_destabilization_2: "Начать неизбежное"
+ GAT_dec_KUB_destabilization_3: "Окончательная поддержка регионов"
+ 
+ 
+ GAT_dec_UKR_destabilization_1_remove: "Поднять массовые протесты в §t[FROM.GetName]§!"
+ 

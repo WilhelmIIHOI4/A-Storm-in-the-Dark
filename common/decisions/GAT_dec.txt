@@ -1,0 +1,609 @@
+#GAT_cat_ = {
+#
+#	GAT_dec_ = {
+#		icon = GFX_decision_generic_PLACEHOLDER
+#
+#		allowed = { original_tag = GAT }
+#		
+#		available = {
+#			
+#		}
+#
+#		visible = {
+#			
+#		}
+#
+#		fire_only_once = no
+#
+#
+#		days_remove = 45
+#		
+#		cost = 100
+#
+#		custom_cost_trigger = {
+#			
+#		}
+#
+#		complete_effect = {
+#			
+#		}
+#
+#		modifier = {
+#			
+#		}
+#		ai_will_do = {
+#			base = 10
+#		}
+#	}
+#}
+GAT_cat_destabilization = {
+
+	GAT_dec_UKR_destabilization_1 = {
+		icon = GFX_decision_eng_trade_unions_demand
+	
+		allowed = { original_tag = GAT }
+		
+		available = {
+			NOT = { has_country_flag = UKR_destabilization_1_remove_flag }
+		}
+	
+		visible = {
+			has_completed_focus = GAT_european_conflict
+			NOT = { has_country_flag = UKR_destabilization_2_flag }
+			NOT = { has_country_flag = UKR_destabilization_3_flag }
+			NOT = { has_idea = ASitD_GAT_idea_UKR_destabilization_2 }
+		}
+	
+		fire_only_once = no
+	
+	
+		days_remove = 20
+		
+		cost = 100
+	
+		custom_cost_trigger = {
+			
+		}
+	
+		complete_effect = {
+			add_stability = -0.05
+			set_country_flag = UKR_destabilization_1_flag
+		}
+		remove_effect = {
+			UKR = {
+				add_popularity = { ideology = fascism popularity = 0.05 }
+			}
+			set_country_flag = UKR_destabilization_1_remove_flag
+		}
+	
+		modifier = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	GAT_dec_UKR_destabilization_1_remove = {
+		icon = {
+			key = GFX_decision_GAT_remove_claim_state_3
+			trigger = {
+				tag = GAT
+				FROM = {
+					check_variable = {
+						var = GOTENLAND_UKR_claims
+						value = 2
+						compare = greater_than_or_equals
+					}
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GAT_remove_claim_state_2
+			trigger = {
+				tag = GAT
+				FROM = {
+					check_variable = {
+						var = GOTENLAND_UKR_claims
+						value = 1
+						compare = greater_than_or_equals
+					}
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GAT_remove_claim_state_1
+			trigger = {
+				tag = GAT
+				FROM = {
+					check_variable = {
+						var = GOTENLAND_UKR_claims
+						value = 0
+						compare = greater_than_or_equals
+					}
+				}
+			}
+		}
+	
+		allowed = { original_tag = GAT }
+		
+		available = {
+			NOT = { has_country_flag = GAT_promoting_ukrain_state_flag }
+			FROM = {
+				custom_trigger_tooltip = {
+					tooltip = GOTENLAND_UKR_claims_no_greater_than_2_tt
+					check_variable = { GOTENLAND_UKR_claims < 2 }
+				}
+			}
+		}
+	
+		visible = {
+			has_country_flag = UKR_destabilization_1_remove_flag
+			NOT = { has_idea = ASitD_GAT_idea_UKR_destabilization_2 }
+		}
+	
+		fire_only_once = no
+	
+	
+		days_remove = 14
+		
+		cost = 25
+		
+		state_target = yes
+		on_map_mode = map_only
+		target_trigger = {
+			FROM = {
+				owner = {
+					tag = UKR
+				}
+				
+			}
+		}
+	
+		custom_cost_trigger = {
+			
+		}
+	
+		complete_effect = {
+			set_country_flag = GAT_promoting_ukrain_state_flag
+			add_stability = -0.01
+		}
+		remove_effect = {
+			clr_country_flag = GAT_promoting_ukrain_state_flag
+			FROM = {
+				add_to_variable = {
+					var = GOTENLAND_UKR_claims
+					value = 1
+				}
+			}
+			set_variable = {
+				var = GOTENLAND_UKR_claims_printed
+				value = GOTENLAND_UKR_claims
+			}
+			multiply_variable = {
+				var = GOTENLAND_UKR_claims_printed
+				value = 1
+			}
+			UKR = {
+				add_popularity = { ideology = fascism popularity = 0.0035 }
+			}
+		}
+	
+		modifier = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+		
+		
+	GAT_dec_UKR_destabilization_2 = {
+		icon = GFX_decision_generic_PLACEHOLDER
+	
+		allowed = { original_tag = GAT }
+		
+		available = {
+			UKR = {
+				fascism > 0.45
+			}
+		}
+	
+		visible = {
+			has_completed_focus = GAT_european_conflict
+			NOT = { has_country_flag = UKR_destabilization_1_flag }
+			NOT = { has_country_flag = UKR_destabilization_2_flag }
+			NOT = { has_country_flag = UKR_destabilization_3_flag }
+		}
+	
+		fire_only_once = no
+	
+	
+		days_remove = 45
+		
+		cost = 100
+	
+		custom_cost_trigger = {
+			
+		}
+	
+		complete_effect = { 
+			
+		}
+		remove_effect = {
+			UKR = {
+				start_civil_war = {
+					ruling_party = neutrality
+					ideology = democratic
+					size = 0.5
+					navy_ratio = 0.1
+					capital = 202
+					states = all
+					keep_all_characters = yes
+					states_filter = {
+					    OR = {
+					    	state = 259
+					    	state = 225
+					    	state = 193
+					    	state = 202
+					    	state = 201
+					    	state = 198
+					    	state = 199
+					    }
+					    is_controlled_by = ROOT
+					}
+				}
+				GAT = {
+					set_autonomy = {
+						target=PREV
+						autonomy_state = autonomy_puppet 
+						freedom_level=0.5 
+						end_civil_wars = no
+					}
+				}
+			}
+			set_country_flag = UKR_destabilization_2_flag
+		}
+	
+		modifier = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	GAT_dec_UKR_destabilization_3 = {
+		icon = GFX_decision_generic_PLACEHOLDER
+	
+		allowed = { original_tag = GAT }
+		
+		available = {
+			UKR = {
+				fascism > 0.45
+			}
+		}
+	
+		visible = {
+			has_completed_focus = GAT_european_conflict
+			#NOT = { has_country_flag = UKR_destabilization_1_flag }
+			NOT = { has_country_flag = UKR_destabilization_2_flag }
+			NOT = { has_idea = ASitD_GAT_idea_UKR_destabilization_2 }
+		}
+	
+		fire_only_once = no
+	
+	
+		days_remove = 45
+		
+		cost = 100
+	
+		custom_cost_trigger = {
+			
+		}
+	
+		complete_effect = {
+			add_ideas = ASitD_GAT_idea_UKR_destabilization_2
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = GAT_idea_UKR_destabilization_3_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+		}
+		remove_effect = {
+			clr_country_flag = UKR_destabilization_3_flag
+			clr_country_flag = UKR_destabilization_2_flag
+			clr_country_flag = UKR_destabilization_1_flag
+		}
+	
+		modifier = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+		
+		
+		
+	
+	GAT_dec_KUB_destabilization_1 = {
+		icon = GFX_decision_eng_trade_unions_demand
+	
+		allowed = { original_tag = GAT }
+		
+		available = {
+			NOT = { has_country_flag = KUB_destabilization_1_remove_flag }
+		}
+	
+		visible = {
+			has_completed_focus = GAT_european_conflict
+			NOT = { has_country_flag = KUB_destabilization_2_flag }
+			NOT = { has_country_flag = KUB_destabilization_3_flag }
+			NOT = { has_idea = ASitD_GAT_idea_KUB_destabilization_2 }
+		}
+	
+		fire_only_once = no
+	
+	
+		days_remove = 20
+		
+		cost = 100
+	
+		custom_cost_trigger = {
+			
+		}
+	
+		complete_effect = {
+			add_stability = -0.05
+			set_country_flag = KUB_destabilization_1_flag
+		}
+		remove_effect = {
+			KUB = {
+				add_popularity = { ideology = fascism popularity = 0.05 }
+			}
+			set_country_flag = KUB_destabilization_1_remove_flag
+		}
+	
+		modifier = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	GAT_dec_KUB_destabilization_1_remove = {
+		icon = {
+			key = GFX_decision_GAT_remove_claim_state_3
+			trigger = {
+				tag = GAT
+				FROM = {
+					check_variable = {
+						var = GOTENLAND_KUB_claims
+						value = 2
+						compare = greater_than_or_equals
+					}
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GAT_remove_claim_state_2
+			trigger = {
+				tag = GAT
+				FROM = {
+					check_variable = {
+						var = GOTENLAND_KUB_claims
+						value = 1
+						compare = greater_than_or_equals
+					}
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GAT_remove_claim_state_1
+			trigger = {
+				tag = GAT
+				FROM = {
+					check_variable = {
+						var = GOTENLAND_KUB_claims
+						value = 0
+						compare = greater_than_or_equals
+					}
+				}
+			}
+		}
+	
+		allowed = { original_tag = GAT }
+		
+		available = {
+			NOT = { has_country_flag = GAT_promoting_KUBain_state_flag }
+			FROM = {
+				custom_trigger_tooltip = {
+					tooltip = GOTENLAND_KUB_claims_no_greater_than_2_tt
+					check_variable = { GOTENLAND_KUB_claims < 2 }
+				}
+			}
+		}
+	
+		visible = {
+			has_country_flag = KUB_destabilization_1_remove_flag
+			NOT = { has_idea = ASitD_GAT_idea_KUB_destabilization_2 }
+		}
+	
+		fire_only_once = no
+	
+	
+		days_remove = 14
+		
+		cost = 25
+		
+		state_target = yes
+		on_map_mode = map_only
+		target_trigger = {
+			FROM = {
+				owner = {
+					tag = KUB
+				}
+				
+			}
+		}
+	
+		custom_cost_trigger = {
+			
+		}
+	
+		complete_effect = {
+			set_country_flag = GAT_promoting_KUBain_state_flag
+			add_stability = -0.01
+		}
+		remove_effect = {
+			clr_country_flag = GAT_promoting_KUBain_state_flag
+			FROM = {
+				add_to_variable = {
+					var = GOTENLAND_KUB_claims
+					value = 1
+				}
+			}
+			set_variable = {
+				var = GOTENLAND_KUB_claims_printed
+				value = GOTENLAND_KUB_claims
+			}
+			multiply_variable = {
+				var = GOTENLAND_KUB_claims_printed
+				value = 1
+			}
+			KUB = {
+				add_popularity = { ideology = fascism popularity = 0.0075 }
+			}
+		}
+	
+		modifier = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+		
+		
+	GAT_dec_KUB_destabilization_2 = {
+		icon = GFX_decision_generic_PLACEHOLDER
+	
+		allowed = { original_tag = GAT }
+		
+		available = {
+			KUB = {
+				fascism > 0.45
+			}
+		}
+	
+		visible = {
+			has_completed_focus = GAT_european_conflict
+			NOT = { has_country_flag = KUB_destabilization_1_flag }
+			NOT = { has_country_flag = KUB_destabilization_2_flag }
+			NOT = { has_country_flag = KUB_destabilization_3_flag }
+		}
+	
+		fire_only_once = no
+	
+	
+		days_remove = 45
+		
+		cost = 100
+	
+		custom_cost_trigger = {
+			
+		}
+	
+		complete_effect = { 
+		}
+		remove_effect = {
+			KUB = {
+				start_civil_war = {
+					ruling_party = neutrality
+					ideology = neutrality
+					size = 0.5
+					navy_ratio = 0.1
+					capital = 237
+					states = all
+					keep_all_characters = yes
+					states_filter = {
+					    OR = {
+					    	state = 236
+					    	state = 237
+					    	state = 232
+					    	state = 821
+					    	state = 828
+					    	state = 1086
+					    	state = 827
+					    }
+					    is_controlled_by = ROOT
+					}
+				}
+				GAT = {
+					set_autonomy = {
+						target=PREV
+						autonomy_state = autonomy_puppet 
+						freedom_level=0.5 
+						end_civil_wars = no
+					}
+				}
+			}
+			set_country_flag = KUB_destabilization_2_flag
+		}
+	
+		modifier = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	GAT_dec_KUB_destabilization_3 = {
+		icon = GFX_decision_generic_PLACEHOLDER
+	
+		allowed = { original_tag = GAT }
+		
+		available = {
+			KUB = {
+				fascism > 0.45
+			}
+		}
+	
+		visible = {
+			has_completed_focus = GAT_european_conflict
+			#NOT = { has_country_flag = KUB_destabilization_1_flag }
+			NOT = { has_country_flag = KUB_destabilization_2_flag }
+			NOT = { has_idea = ASitD_GAT_idea_KUB_destabilization_2 }
+		}
+	
+		fire_only_once = no
+	
+	
+		days_remove = 45
+		
+		cost = 100
+	
+		custom_cost_trigger = {
+			
+		}
+	
+		complete_effect = {
+			add_ideas = ASitD_GAT_idea_KUB_destabilization_2
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = GAT_idea_KUB_destabilization_3_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+		}
+		remove_effect = {
+			clr_country_flag = KUB_destabilization_3_flag
+			clr_country_flag = KUB_destabilization_2_flag
+			clr_country_flag = KUB_destabilization_1_flag
+		}
+	
+		modifier = {
+			
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+	
+}

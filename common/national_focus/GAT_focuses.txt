@@ -1,0 +1,1603 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_INTERNAL_AFFAIRS}
+### search_filters = {FOCUS_FILTER_ARMY_XP}
+### search_filters = {FOCUS_FILTER_NAVY_XP}
+### search_filters = {FOCUS_FILTER_AIR_XP}
+### search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
+### search_filters = {FOCUS_FILTER_POLITICAL_CHARACTER}
+### search_filters = {FOCUS_FILTER_MILITARY_CHARACTER}
+### search_filters = {FOCUS_FILTER_INTERNATIONAL_TRADE}
+### search_filters = {FOCUS_FILTER_HISTORICAL}
+
+# CONSTANT FOR INNER CIRCLE TIMES (This is Focus cost so x7 to get the days) - THE CONSTANTS USED IN THE EVENT FILE need to be these values x7
+@inner_circle_time_tier_1 = 20
+@inner_circle_time_tier_2 = 20
+@inner_circle_time_tier_3 = 40
+
+focus_tree = {
+	id = gotenland_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = GAT
+		}
+	}
+
+	initial_show_position = {
+		x = 76
+		y = 0
+	}
+	continuous_focus_position = { x = 76 y = 1600 }
+	
+	#Focus Path shortcuts	
+	#shortcut = {
+	#	name = GER_oppose_hitler_shortcut
+	#	target = GER_oppose_hitler_ww 
+	#	scroll_wheel_factor = 0.485
+	#	trigger = {
+	#		has_dlc = "Gotterdammerung"
+	#	}
+	#}
+
+	
+#	shortcut = {
+#		name = GAT_economic_path_shortcut
+#		target =  
+#		scroll_wheel_factor = 0.75
+#	}
+#
+#	shortcut = {
+#		name = GAT_naval_doctrine_shortcut
+#		target = 
+#		scroll_wheel_factor = 1.0
+#	}
+#	
+#	shortcut = {
+#		name = GAT_air_doctrine_shortcut
+#		target = 
+#		scroll_wheel_factor = 1.0
+#	}
+#
+#	shortcut = {
+#		name = GAT_military_doctrine_shortcut
+#		target = 
+#		scroll_wheel_factor = 1.0
+#	}
+
+#	continuous_focus_position = { x = 500 y = 1300 }
+	
+	default = no
+	
+	#alternate_icon_set = FOCUS_ALTERNATE_ICONS
+	# ==> Loc key for toggle button : FOCUS_ALTERNATE_ICONS
+	# ==> GFX for icon on toggle button : GFX_FOCUS_ALTERNATE_ICONS
+	
+	
+	
+#	focus = {
+#		id = GAT_				### russian name
+#		icon = GFX_
+#		prerequisite = { focus =  }
+#		#mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#			
+#		}
+#		
+#		bypass = {
+#			
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		#complete_tooltip = {
+#		#	#custom_effect_tooltip = generic_skip_one_line_tt
+#		#}
+#
+#		completion_reward = {
+#			
+#		}
+#	}
+
+	focus = {
+		id = GAT_history_be_damned				### История к чёрту
+		icon = GFX_focus_generic_crush_the_military
+#		mutually_exclusive = { focus =  }
+		x = 20
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+#		complete_tooltip = {
+#			#custom_effect_tooltip = generic_skip_one_line_tt
+#		}
+
+		completion_reward = {
+			add_timed_idea = { idea = ASitD_GAT_idea_history_be_damned days = 365 }
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			
+		}
+	}
+	focus = {
+		id = GAT_Aryan_Brotherhood				### Арийское братство
+		icon = GFX_focus_generic_full_social_mobilization
+		prerequisite = { focus = GAT_history_be_damned }
+		mutually_exclusive = { focus = GAT_superiority_in_quantity }
+		x = -2
+		y = 1
+		relative_position_id = GAT_history_be_damned
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_manpower = 25000
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ASitD_GAT_idea_Aryan_Brotherhood
+			set_country_flag = GAT_Aryan_Brotherhood_c_flag
+		}
+	}
+	focus = {
+		id = GAT_superiority_in_quantity				### Превосходство количеством
+		icon = GFX_focus_generic_limited_social_mobilization
+		prerequisite = { focus = GAT_history_be_damned }
+		mutually_exclusive = { focus = GAT_Aryan_Brotherhood }
+		x = 2
+		y = 1
+		relative_position_id = GAT_history_be_damned
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_manpower = 25000
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ASitD_GAT_idea_superiority_in_quantity
+			set_country_flag = GAT_superiority_in_quantity_c_flag
+		}
+	}
+	focus = {
+		id = GAT_temporary_addiction				### Временное привыкание
+		icon = GFX_focus_generic_advanced_military_studies
+		prerequisite = { focus = GAT_Aryan_Brotherhood }
+		mutually_exclusive = { focus = GAT_gradual_sorting }
+		x = 1
+		y = 1
+		relative_position_id = GAT_Aryan_Brotherhood
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_country_flag = {
+				flag = GAT_Aryan_Brotherhood_c_flag
+				days > 365
+			}
+			custom_trigger_tooltip = {
+				tooltip = GAT1_last_purge_focus_days_tt
+				has_country_flag = {
+					flag = GAT_Aryan_Brotherhood_c_flag
+					days > 365
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ASitD_GAT_idea_Aryan_Brotherhood
+				add_idea = ASitD_GAT_idea_Aryan_Brotherhood_2
+			}
+		}
+	}
+	focus = {
+		id = GAT_gradual_sorting				### Постепенная сортировка
+		icon = GFX_focus_FIN_parmis_devils
+		prerequisite = { focus = GAT_superiority_in_quantity }
+		mutually_exclusive = { focus = GAT_temporary_addiction }
+		x = -1
+		y = 1
+		relative_position_id = GAT_superiority_in_quantity
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_country_flag = {
+				flag = GAT_superiority_in_quantity_c_flag
+				days > 365
+			}
+			custom_trigger_tooltip = {
+				tooltip = GAT2_last_purge_focus_days_tt
+				has_country_flag = {
+					flag = GAT_superiority_in_quantity_c_flag
+					days > 365
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ASitD_GAT_idea_superiority_in_quantity
+				add_idea = ASitD_GAT_idea_superiority_in_quantity_2
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	###########################
+	####UNCOMPROMISING PATH####
+	###########################
+	focus = {
+		id = GAT_uncompromising_path				### Бескомпромиссный путь
+		icon = GFX_focus_SOV_mobilization_plan
+		prerequisite = { focus = GAT_history_be_damned }
+		mutually_exclusive = { focus = GAT_path_of_eternal_promises }
+		x = -3
+		y = 3
+		relative_position_id = GAT_history_be_damned
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+#		complete_tooltip = {
+#			#custom_effect_tooltip = generic_skip_one_line_tt
+#		}
+
+		completion_reward = {
+			137 = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			196 = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			#hidden_effect = {
+			#	GAT = { country_event = { id = gat.ukr_or_kub } }
+				add_ideas = ASitD_GAT_idea_uncompromising_path
+				custom_effect_tooltip = generic_skip_one_line_tt
+				137 = {
+					add_resource = {
+						type = steel
+						amount = 15
+					}
+				}
+				196 = {
+					add_resource = {
+						type = coal
+						amount = 5
+					}
+				}
+				196 = {
+					add_resource = {
+						type = aluminium
+						amount = 6
+					}
+				}
+				137 = {
+					add_resource = {
+						type = tungsten
+						amount = 7
+					}
+				}
+			#}
+		}
+	}
+	focus = {
+		id = GAT_1				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_uncompromising_path }
+		mutually_exclusive = { focus = GAT_4 }
+		x = -7
+		y = 1
+		relative_position_id = GAT_uncompromising_path
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_european_conflict				### Европейский конфликт
+		icon = GFX_focus_GER_european_confederation
+		prerequisite = { focus = GAT_uncompromising_path }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = GAT_uncompromising_path
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			unlock_decision_tooltip = GAT_dec_UKR_destabilization_1
+			unlock_decision_tooltip = GAT_dec_KUB_destabilization_1
+		}
+	}
+	focus = {
+		id = GAT_4				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_uncompromising_path }
+		mutually_exclusive = { focus = GAT_1 }
+		x = -5
+		y = 1
+		relative_position_id = GAT_uncompromising_path
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_5				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_european_conflict }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = GAT_european_conflict
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_6				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_european_conflict }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = GAT_european_conflict
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_7				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_european_conflict }
+		mutually_exclusive = { focus = GAT_3 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = 1
+		y = 1
+		relative_position_id = GAT_european_conflict
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_8				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_4 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = 1
+		y = 1
+		relative_position_id = GAT_4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_9				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_4 focus = GAT_1 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = -1
+		y = 1
+		relative_position_id = GAT_4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_10				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_1 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = -1
+		y = 1
+		relative_position_id = GAT_1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_11				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_uncompromising_path }
+		#mutually_exclusive = { focus = GAT_ }
+		x = -3
+		y = 1
+		relative_position_id = GAT_uncompromising_path
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_completed_focus = GAT_4
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_12				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_11 }
+		prerequisite = { focus = GAT_8 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = 0
+		y = 2
+		relative_position_id = GAT_11
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_13				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_10 }
+		prerequisite = { focus = GAT_14 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = 0
+		y = 2
+		relative_position_id = GAT_10
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_14				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_1 }
+		prerequisite = { focus = GAT_9 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = -2
+		y = 2
+		relative_position_id = GAT_1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_15				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_5 }
+		prerequisite = { focus = GAT_12 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = 1
+		y = 1
+		relative_position_id = GAT_12
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_16				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_6 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = -1
+		y = 2
+		relative_position_id = GAT_6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_17				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_6 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = 0
+		y = 1
+		relative_position_id = GAT_6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_18				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_6 }
+		prerequisite = { focus = GAT_7 focus = GAT_3 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = 1
+		y = 2
+		relative_position_id = GAT_6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_19				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_16 }
+		prerequisite = { focus = GAT_13 focus = GAT_12 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = -3
+		y = 1
+		relative_position_id = GAT_16
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_20				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_16 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = 0
+		y = 2
+		relative_position_id = GAT_16
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_21				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_16 }
+		prerequisite = { focus = GAT_15 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = -1
+		y = 1
+		relative_position_id = GAT_16
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_22				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_20 }
+		prerequisite = { focus = GAT_21 focus = GAT_19 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = -2
+		y = 1
+		relative_position_id = GAT_20
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_23				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_18 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = 1
+		y = 1
+		relative_position_id = GAT_18
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_24				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_18 }
+		prerequisite = { focus = GAT_23 }
+		#mutually_exclusive = { focus = GAT_ }
+		x = 0
+		y = 2
+		relative_position_id = GAT_18
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GAT_25				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_23}
+		#mutually_exclusive = { focus = GAT_ }
+		x = 1
+		y = 1
+		relative_position_id = GAT_23
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	################################
+	####PATH OF ETERNAL PROMISES####
+	################################
+	focus = {
+		id = GAT_path_of_eternal_promises				### Путь вечных обещаний
+		icon = GFX_focus_generic_industrial_experts
+		prerequisite = { focus = GAT_history_be_damned }
+		mutually_exclusive = { focus = GAT_uncompromising_path }
+		x = 3
+		y = 3
+		relative_position_id = GAT_history_be_damned
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+#		complete_tooltip = {
+#			#custom_effect_tooltip = generic_skip_one_line_tt
+#		}
+
+		completion_reward = {
+			137 = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
+					}
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			196 = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
+					}
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			#hidden_effect = {
+			#	GAT = { country_event = { id = gat. } }
+				add_ideas = ASitD_GAT_idea_path_of_eternal_promises
+				custom_effect_tooltip = generic_skip_one_line_tt
+				137 = {
+					add_resource = {
+						type = steel
+						amount = 15
+					}
+				}
+				196 = {
+					add_resource = {
+						type = coal
+						amount = 5
+					}
+				}
+				196 = {
+					add_resource = {
+						type = aluminium
+						amount = 6
+					}
+				}
+				137 = {
+					add_resource = {
+						type = tungsten
+						amount = 7
+					}
+				}
+			#}
+		}
+	}
+	focus = {
+		id = GAT_1_1				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_path_of_eternal_promises }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = GAT_path_of_eternal_promises
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	##################
+	####50/50 PATH####
+	##################
+	focus = {
+		id = GAT_3				### russian name
+		icon = GFX_
+		prerequisite = { focus = GAT_uncompromising_path focus = GAT_path_of_eternal_promises }
+		mutually_exclusive = { focus = GAT_7 }
+		x = 3
+		y = 2
+		relative_position_id = GAT_uncompromising_path
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	##################
+	####ARYAN ARMY####
+	##################
+	focus = {
+		id = GAT_army_aryan				### russian name
+		icon = GFX_
+		#prerequisite = { focus = }
+		mutually_exclusive = { focus = GAT_army_quantity }
+		x = 9
+		y = 0
+		#relative_position_id = 
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_completed_focus = GAT_Aryan_Brotherhood
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	####################################
+	####SUPERIORITY IN QUANTITY ARMY####
+	####################################
+	focus = {
+		id = GAT_army_quantity				### russian name
+		icon = GFX_
+		#prerequisite = { focus = }
+		mutually_exclusive = { focus = GAT_army_aryan }
+		x = 12
+		y = 0
+		#relative_position_id = 
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_completed_focus = GAT_superiority_in_quantity
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		#complete_tooltip = {
+		#	#custom_effect_tooltip = generic_skip_one_line_tt
+		#}
+
+		completion_reward = {
+			
+		}
+	}

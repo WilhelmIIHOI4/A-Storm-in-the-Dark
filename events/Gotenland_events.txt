@@ -1,0 +1,55 @@
+add_namespace = gat
+
+country_event = {
+	id = gat.ukr_or_kub
+	title = gat.ukr_or_kub.t
+	desc = gat.ukr_or_kub.d
+	picture = GFX_report_event_fascist_gathering
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = gat.ukr_or_kub.a
+		ai_chance = {
+			base = 20
+			#modifier = {
+			#	factor = 0
+			#	is_historical_focus_on = yes
+			#}
+		}
+		effect_tooltip = {
+			UKR = {
+				custom_effect_tooltip = needs_approval
+				annex_country = {
+					target = CAN
+					transfer_troops = no
+				}
+			}
+		}
+		hidden_effect = {
+			UKR = {
+				country_event = { id = gat.choose_ukr }
+			}
+		}
+	}
+	option = { # Refuse
+		name = gat.ukr_or_kub.b
+		ai_chance = { 
+			base = 80
+			#modifier = {
+			#	factor = 100
+			#	is_historical_focus_on = yes
+			#}
+		}
+		effect_tooltip = {
+			KUB = {
+				custom_effect_tooltip = needs_approval
+			}
+		}
+		#hidden_effect = {
+			KUB = {
+				country_event = { id = gat.choose_kub }
+			}
+		#}
+	}
+}

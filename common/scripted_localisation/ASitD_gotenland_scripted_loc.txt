@@ -1,0 +1,17 @@
+defined_text = { # Country
+	name = GATGetUkrainClaimStrength
+	text = {
+		trigger = {
+			check_variable = {
+				GOTENLAND_UKR_claims < 0
+			}
+		}
+		localization_key = GOTENLAND_belarus_claims_tooltip
+	}
+	text = {
+		trigger = {
+			tag = GAT
+		}
+		localization_key = mills
+	}
+}

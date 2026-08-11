@@ -1,0 +1,33 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_portrait_gat_alfred_eduard_frauenfeld"
+		texturefile = "gfx/leaders/GAT/Portrait_GAT_Alfred_Eduard_Frauenfeld.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_gat_erich_hartmann"
+		texturefile = "gfx/leaders/GAT/Portrait_GAT_Erich_Alfred_Hartmann.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_gat_felix_steiner"
+		texturefile = "gfx/leaders/GAT/Portrait_GAT_Felix_Steiner.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_gat_paul_hausser"
+		texturefile = "gfx/leaders/GAT/Portrait_GAT_Paul_Hausser.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_gat_wilhelm_stuckart"
+		texturefile = "gfx/leaders/GAT/Portrait_GAT_Wilhelm_Stuckart.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_gat_german_winkler"
+		texturefile = "gfx/leaders/GAT/Portrait_GAT_German_Winkler.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_gat_Curt_von_Gottberg"
+		texturefile = "gfx/leaders/GAT/Portrait_GAT_Curt_von_Gottberg.dds"
+	}
+
+}

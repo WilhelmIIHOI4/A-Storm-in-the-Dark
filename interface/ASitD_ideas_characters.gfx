@@ -1,0 +1,18 @@
+spriteTypes = {
+
+	### GAT
+
+	spriteType = {
+		name = "GFX_GAT_Wilhelm_Stuckart_small"
+		texturefile = "gfx/interface/ideas/idea_GAT_Wilhelm_Stuckart.dds"
+	}
+	spriteType = {
+		name = "GFX_GAT_German_Winkler_small"
+		texturefile = "gfx/interface/ideas/Portrait_GAT_German_Winkler_small.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_gat_Curt_von_Gottberg_small"
+		texturefile = "gfx/interface/ideas/Portrait_GAT_Curt_von_Gottberg_small.dds"
+	}
+	
+}

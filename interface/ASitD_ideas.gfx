@@ -1,0 +1,19 @@
+spriteTypes = {	
+
+
+
+	#SpriteType = {
+	#	name = "GFX_idea_traits_strip"
+	#	texturefile = "gfx/interface/ideas/idea_traits_strip.dds"
+	#}
+	
+	SpriteType = {
+		name = "GFX_idea_GAT_UKR_destabilization_2"
+		texturefile = "gfx/interface/ideas/ASitD_GAT_idea_UKR_destabilization_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_GAT_KUB_destabilization_2"
+		texturefile = "gfx/interface/ideas/ASitD_GAT_idea_KUB_destabilization_2.dds"
+	}
+	
+}

@@ -1,0 +1,27 @@
+
+state={
+	id=1086
+	name="STATE_ASitD5"
+	manpower = 416080
+	
+	state_category = rural
+	resources={
+		chromium=14 # was: 20
+	}
+
+	history={
+		owner = KUB
+		buildings = {
+			infrastructure = 2
+			air_base = 2
+		}
+		add_core_of = KUB
+		add_core_of = SOV
+	}
+
+	provinces={
+		11690 6702 11661 6733 6718 
+	}
+
+	local_supplies=0.0 
+}
