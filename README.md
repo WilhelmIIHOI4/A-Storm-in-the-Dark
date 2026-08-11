@@ -18,4 +18,5 @@ If you have any suggestions or feedback, please contact us using the following m
 ## Authors
 
 - [@WilhelmIIHOI4](https://github.com/WilhelmIIHOI4)
+- - [@WmHOI4_official **__youtube__**](https://www.youtube.com/@WmHOI4_official)
 
