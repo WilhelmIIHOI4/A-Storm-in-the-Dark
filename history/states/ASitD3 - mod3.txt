@@ -4,22 +4,22 @@ state={
 	name="STATE_ASitD3"
 	manpower = 1393984
 	
-	state_category = city
+	state_category = rural
 	resources={
-		tungsten=17 # was: 26
-		oil=12 # was: 18
+		tungsten=8
+		oil=6
 	}
 
 	history={
 		owner = KUB
 		victory_points = {
-			3720 1 
+			3720 3
 		}
 		victory_points = {
-			719 3
+			719 5
 		}
 		buildings = {
-			infrastructure = 3 #was: 5
+			infrastructure = 3
 			industrial_complex = 1
 			719 = {
 				naval_base = 3

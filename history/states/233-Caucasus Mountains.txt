@@ -9,12 +9,11 @@ state = {
 		owner = KUB
 		buildings = {
 			infrastructure = 2
-
 		}
 		add_core_of = KUB
 		add_core_of = SOV
 		victory_points = {
-			9663 1
+			9663 3
 		}
 	}
 

@@ -9,13 +9,15 @@ state={
 	history={
 		owner = KUB
 		buildings = {
-			infrastructure = 1
+			infrastructure = 3
+			industrial_complex = 3
+			air_base = 3
 		}
 		add_core_of = SOV
 		add_core_of = KUB
 		add_core_of = KAL
 		victory_points = {
-			11724 1
+			11724 5
 		}
 	}
 
