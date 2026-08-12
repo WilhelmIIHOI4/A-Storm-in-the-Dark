@@ -198,7 +198,7 @@ GAT_cat_destabilization = {
 		
 		
 	GAT_dec_UKR_destabilization_2 = {
-		icon = GFX_decision_generic_PLACEHOLDER
+		icon = GFX_decision_generic_guerilla_base
 	
 		allowed = { original_tag = GAT }
 		
@@ -272,7 +272,7 @@ GAT_cat_destabilization = {
 		}
 	}
 	GAT_dec_UKR_destabilization_3 = {
-		icon = GFX_decision_generic_PLACEHOLDER
+		icon = GFX_decision_generic_political_rally
 	
 		allowed = { original_tag = GAT }
 		
@@ -484,7 +484,7 @@ GAT_cat_destabilization = {
 		
 		
 	GAT_dec_KUB_destabilization_2 = {
-		icon = GFX_decision_generic_PLACEHOLDER
+		icon = GFX_decision_generic_guerilla_base
 	
 		allowed = { original_tag = GAT }
 		
@@ -557,7 +557,7 @@ GAT_cat_destabilization = {
 		}
 	}
 	GAT_dec_KUB_destabilization_3 = {
-		icon = GFX_decision_generic_PLACEHOLDER
+		icon = GFX_decision_generic_political_rally
 	
 		allowed = { original_tag = GAT }
 		
